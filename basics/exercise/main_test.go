@@ -60,4 +60,14 @@ func TestBinarySearch(t *testing.T) {
 		t.Logf("Got: %d\n", result)
 		t.Error("Result does not match expectation")
 	}
+
+	find = 10
+	exp = -1
+	result = BinarySearch(find, data)
+
+	if exp != result {
+		t.Logf("Expected: %d\n", exp)
+		t.Logf("Got: %d\n", result)
+		t.Error("Result does not match expectation")
+	}
 }
