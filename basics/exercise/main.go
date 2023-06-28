@@ -26,3 +26,23 @@ func SearchList(v int, list []int) int {
 	}
 	return -1
 }
+
+// Write a binary search function to search an array of integers, return the index when found otherwise return -1
+func BinarySearch(v int, list []int) int {
+	var first int = 0
+	var last int = len(list)
+	for first <= last {
+		mid := (first + last) / 2
+		if list[mid] == v {
+			return mid
+		} else {
+			if v > list[mid] {
+				first = mid + 1
+			} else {
+				last = mid - 1
+			}
+		}
+
+	}
+	return -1
+}
