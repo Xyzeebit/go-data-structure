@@ -16,3 +16,13 @@ func ArraySum(arr []int) int {
 	}
 	return total
 }
+
+// Write a method which will search a list for some give value
+func SearchList(v int, list []int) int {
+	for i, a := range list {
+		if a == v {
+			return i
+		}
+	}
+	return -1
+}
