@@ -91,3 +91,14 @@ func RotateList(k int, list []int) []int {
 
 	return arr
 }
+
+// Write a function that sums the values of a 2 dimentional array
+func Sum2DimensionalArray(arr [2][2]int) int {
+	var total int
+	for _, i := range arr {
+		for _, j := range i {
+			total += j
+		}
+	}
+	return total
+}

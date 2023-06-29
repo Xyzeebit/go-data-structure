@@ -100,7 +100,22 @@ func TestBinaryRecursiveSearch(t *testing.T) {
 		if i != n {
 			t.Logf("Expected: %d\n", i)
 			t.Logf("Got: %d\n", n)
-			t.Error("Result does not expectation")
+			t.Error("Result does not match expectation")
 		}
 	}
+}
+
+func TestSum2DimensionalArray(t *testing.T) {
+	data := [2][2]int{
+		{1, 2},
+		{5, 6},
+	}
+	exp := 14
+	result := Sum2DimensionalArray(data)
+	if exp != result {
+		t.Logf("Expected: %d\n", exp)
+		t.Logf("Got: %d\n", result)
+		t.Error("Result does not match expectation")
+	}
+
 }
