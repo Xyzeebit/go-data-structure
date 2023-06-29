@@ -92,3 +92,15 @@ func TestRotateList(t *testing.T) {
 		t.Error("Result does not match expectation")
 	}
 }
+
+func TestBinaryRecursiveSearch(t *testing.T) {
+	data := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	for i, v := range data {
+		n := BinaryRecursiveSearch(v, data)
+		if i != n {
+			t.Logf("Expected: %d\n", i)
+			t.Logf("Got: %d\n", n)
+			t.Error("Result does not expectation")
+		}
+	}
+}

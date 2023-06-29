@@ -48,6 +48,30 @@ func BinarySearch(v int, list []int) int {
 	return -1
 }
 
+// Write a recursive binary search function
+func BinaryRecursiveSearch(v int, list []int) int {
+	first := 0
+	last := len(list) - 1
+	var mid int = (first + last) - 1
+	if list[mid] == v {
+		return mid
+	} else if list[mid] < v {
+		return BSH(v, list, ((mid + 1 + last) / 2), mid+1, last)
+	} else {
+		return BSH(v, list, ((mid - 1 + first) / 2), first, mid-1)
+	}
+}
+
+func BSH(v int, list []int, mid, start, end int) int {
+	if list[mid] == v {
+		return mid
+	} else if list[mid] < v {
+		return BSH(v, list, ((mid + 1 + end) / 2), mid+1, end)
+	} else {
+		return BSH(v, list, ((mid - 1 + start) / 2), start, mid-1)
+	}
+}
+
 // Given a list, you need to rotate its elements K number of times
 // e.g [1,2,3,4,5,6] k=2 [3,4,5,6,1,2]
 func RotateList(k int, list []int) []int {
