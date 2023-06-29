@@ -143,3 +143,15 @@ func TestSum(t *testing.T) {
 		t.Error("Result does not match expectation")
 	}
 }
+
+func TestReverseList(t *testing.T) {
+	data := []int{1, 2, 3, 4, 5}
+	exp := []int{5, 4, 3, 2, 1}
+	result := ReverseList(data)
+
+	if !reflect.DeepEqual(exp, result) {
+		t.Logf("Expected: %v\n", exp)
+		t.Logf("Got: %v\n", result)
+		t.Error("Result does not match expectation")
+	}
+}

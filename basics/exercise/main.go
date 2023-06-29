@@ -123,3 +123,15 @@ func Sum(n int) int {
 	}
 	return n + Sum(n-1)
 }
+
+// Write a function to reverse a list without creating a new list
+func ReverseList(list []int) []int {
+	i := 0
+	j := len(list) - 1
+	for i < j {
+		list[i], list[j] = list[j], list[i]
+		i++
+		j--
+	}
+	return list
+}
