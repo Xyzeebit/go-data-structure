@@ -1,6 +1,7 @@
 package main
 
 import (
+	"reflect"
 	"testing"
 )
 
@@ -76,5 +77,18 @@ func TestBinarySearch(t *testing.T) {
 		if i != n {
 			t.Error("Expected:", i, "Got:", n, "\n")
 		}
+	}
+}
+
+func TestRotateList(t *testing.T) {
+	data := []int{10, 20, 30, 40, 50, 60}
+	k := 2
+	exp := []int{30, 40, 50, 60, 10, 20}
+	result := RotateList(k, data)
+
+	if !reflect.DeepEqual(exp, result) {
+		t.Logf("Expected: %v\n", exp)
+		t.Logf("Got: %v\n", result)
+		t.Error("Result does not match expectation")
 	}
 }

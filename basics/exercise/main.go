@@ -47,3 +47,23 @@ func BinarySearch(v int, list []int) int {
 	}
 	return -1
 }
+
+// Given a list, you need to rotate its elements K number of times
+// e.g [1,2,3,4,5,6] k=2 [3,4,5,6,1,2]
+func RotateList(k int, list []int) []int {
+	size := len(list)
+	tmp := list[0:k]
+	arr := make([]int, size)
+	j := 0
+	for i := k; i < size; i++ {
+		arr[j] = list[i]
+		j++
+	}
+
+	for i := 0; i < k; i++ {
+		arr[j] = tmp[i]
+		j++
+	}
+
+	return arr
+}
