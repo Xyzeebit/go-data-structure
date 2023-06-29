@@ -131,3 +131,15 @@ func TestSecondLargestInList(t *testing.T) {
 		t.Error("Result doen not match expectation")
 	}
 }
+
+func TestSum(t *testing.T) {
+	v := 5
+	exp := 15
+	r := Sum(v)
+
+	if exp != r {
+		t.Logf("Expected: %d\n", exp)
+		t.Logf("Got: %d\n", r)
+		t.Error("Result does not match expectation")
+	}
+}

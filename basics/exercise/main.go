@@ -115,3 +115,11 @@ func SecondLargestInList(list []int) int {
 	}
 	return secondLargest
 }
+
+// Write a function that computes the sum on N e.g Sum(N) -> 1+2+3..+N
+func Sum(n int) int {
+	if n <= 1 {
+		return n
+	}
+	return n + Sum(n-1)
+}
