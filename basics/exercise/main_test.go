@@ -119,3 +119,15 @@ func TestSum2DimensionalArray(t *testing.T) {
 	}
 
 }
+
+func TestSecondLargestInList(t *testing.T) {
+	data := []int{1, 6, 7, 3, 9, 2}
+	exp := 7
+	result := SecondLargestInList(data)
+
+	if exp != result {
+		t.Logf("Expected: %d\n", exp)
+		t.Logf("Got: %d\n", result)
+		t.Error("Result doen not match expectation")
+	}
+}

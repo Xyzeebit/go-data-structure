@@ -102,3 +102,16 @@ func Sum2DimensionalArray(arr [2][2]int) int {
 	}
 	return total
 }
+
+// Write a function that finds the second largest element in an array
+func SecondLargestInList(list []int) int {
+	var secondLargest int
+	var largest int = list[0]
+	for _, n := range list {
+		if n > largest {
+			secondLargest = largest
+			largest = n
+		}
+	}
+	return secondLargest
+}
