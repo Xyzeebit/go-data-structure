@@ -177,3 +177,16 @@ func TestSort01(t *testing.T) {
 		t.Error("Result does not match expectation")
 	}
 }
+
+func TestFindSumInArray(t *testing.T) {
+	data := []int{2, 3, 5, 1, 6, 9}
+	v := 3
+	exp := []int{2, 1}
+	r := FindSumInArray(v, data)
+
+	if !reflect.DeepEqual(exp, r) {
+		t.Logf("Expected: %v\n", exp)
+		t.Logf("Got: %v\n", r)
+		t.Error("Result does not match expectation")
+	}
+}

@@ -161,3 +161,29 @@ func Sort01(list []int) []int {
 	}
 	return list
 }
+
+// Given an array of n elements, and a value v, find two elements in the array that sums to v
+func FindSumInArray(v int, arr []int) []int {
+	r := make([]int, 2)
+	i := 0
+	j := i + 1
+	// 1,5,7,2,4 = 7 - [5,2]
+	for r[0]+r[1] != v {
+		if arr[j] < v {
+			if arr[i]+arr[j] == v {
+				r[0] = arr[i]
+				r[1] = arr[j]
+				break
+			}
+			if j == len(arr) {
+				i++
+				j = 0
+			}
+			if i == len(arr) {
+				return []int{-1, -1}
+			}
+		}
+		j++
+	}
+	return r
+}
