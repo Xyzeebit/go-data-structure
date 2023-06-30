@@ -135,3 +135,29 @@ func ReverseList(list []int) []int {
 	}
 	return list
 }
+
+// given a list of 0s and 1s, sort the list so that all the 0s comes before 1s
+func Sort01(list []int) []int {
+	i := 0
+	j := len(list) - 1
+	for i <= j {
+		if list[i] == 1 {
+			if list[j] == 0 {
+				list[i], list[j] = list[j], list[i]
+				i++
+				j--
+			} else {
+				j--
+			}
+		} else {
+			if list[j] == 0 {
+				i++
+			} else {
+				i++
+				j--
+			}
+		}
+
+	}
+	return list
+}

@@ -155,3 +155,25 @@ func TestReverseList(t *testing.T) {
 		t.Error("Result does not match expectation")
 	}
 }
+
+func TestSort01(t *testing.T) {
+	data := []int{1, 0, 1, 0, 0, 1, 0, 1, 1}
+	exp := []int{0, 0, 0, 0, 1, 1, 1, 1, 1}
+	r := Sort01(data)
+
+	if !reflect.DeepEqual(exp, r) {
+		t.Logf("Expected %v\n", exp)
+		t.Logf("Got: %v\n", r)
+		t.Error("Result does not match expectation")
+	}
+
+	data = []int{0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0}
+	exp = []int{0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1}
+	r = Sort01(data)
+
+	if !reflect.DeepEqual(exp, r) {
+		t.Logf("Expected: %v\n", exp)
+		t.Logf("Got: %v\n", r)
+		t.Error("Result does not match expectation")
+	}
+}
