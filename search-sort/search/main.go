@@ -12,6 +12,10 @@ func main() {
 	v = 2
 	find = linearSearchSorted(arr2, v)
 	fmt.Printf("search in %v for %d : %d\n", arr2, v, find)
+
+	v = 7
+	n := binarySearch(arr2, v)
+	fmt.Printf("search in %v for %d : %d\n", arr2, v, n)
 }
 
 func linearSearch(list []int, v int) int {
@@ -30,6 +34,24 @@ func linearSearchSorted(list []int, v int) int {
 		}
 		if v == a {
 			return i
+		}
+	}
+	return -1
+}
+
+func binarySearch(list []int, v int) int {
+	start := 0
+	end := len(list) - 1
+	var mid int
+
+	for start <= end {
+		mid = (start + end) / 2
+		if list[mid] == v {
+			return mid
+		} else if list[mid] < v {
+			start = mid + 1
+		} else {
+			end = mid - 1
 		}
 	}
 	return -1
