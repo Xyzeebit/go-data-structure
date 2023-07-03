@@ -28,6 +28,8 @@ func main() {
 
 	fmt.Println("Find duplicate sorted method")
 	printDuplicateSort(arr3)
+	fmt.Print("\nFind duplicate hash approach\n")
+	printDuplicateHash(arr3)
 }
 
 func linearSearch(list []int, v int) int {
@@ -86,7 +88,21 @@ func printDuplicateSort(arr []int) {
 	fmt.Printf("%v\n", arr)
 	for i := 1; i < len(arr); i++ {
 		if arr[i] == arr[i-1] {
-			print(arr[i], " ")
+			fmt.Print(arr[i], " ")
 		}
 	}
+}
+
+func printDuplicateHash(arr []int) {
+	m := make(map[int]int)
+	for _, x := range arr {
+		n, ok := m[x]
+		if ok {
+			fmt.Print(n, " ")
+
+		} else {
+			m[x] = x
+		}
+	}
+	fmt.Println()
 }
