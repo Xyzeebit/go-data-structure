@@ -16,6 +16,10 @@ func main() {
 	v = 7
 	n := binarySearch(arr2, v)
 	fmt.Printf("search in %v for %d : %d\n", arr2, v, n)
+
+	arr3 := []int{1, 2, 4, 6, 2, 7, 4, 6, 5, 9, 1}
+	fmt.Printf("Array: %v\n", arr3)
+	printDuplicateBrute(arr3)
 }
 
 func linearSearch(list []int, v int) int {
@@ -55,4 +59,16 @@ func binarySearch(list []int, v int) int {
 		}
 	}
 	return -1
+}
+
+// Given an array of numbers, print the duplicate elements in the array
+func printDuplicateBrute(arr []int) {
+	for i := 0; i < len(arr); i++ {
+		for j := i + 1; j < len(arr); j++ {
+			if arr[i] == arr[j] {
+				fmt.Print(arr[j], " ")
+				break
+			}
+		}
+	}
 }
