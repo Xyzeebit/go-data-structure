@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 	arr := []int{2, 8, 1, 9, 10, 1, 5, 7}
@@ -18,8 +21,13 @@ func main() {
 	fmt.Printf("search in %v for %d : %d\n", arr2, v, n)
 
 	arr3 := []int{1, 2, 4, 6, 2, 7, 4, 6, 5, 9, 1}
+
 	fmt.Printf("Array: %v\n", arr3)
 	printDuplicateBrute(arr3)
+	fmt.Println()
+
+	fmt.Println("Find duplicate sorted method")
+	printDuplicateSort(arr3)
 }
 
 func linearSearch(list []int, v int) int {
@@ -69,6 +77,16 @@ func printDuplicateBrute(arr []int) {
 				fmt.Print(arr[j], " ")
 				break
 			}
+		}
+	}
+}
+
+func printDuplicateSort(arr []int) {
+	sort.Ints(arr)
+	fmt.Printf("%v\n", arr)
+	for i := 1; i < len(arr); i++ {
+		if arr[i] == arr[i-1] {
+			print(arr[i], " ")
 		}
 	}
 }
