@@ -30,6 +30,9 @@ func main() {
 	printDuplicateSort(arr3)
 	fmt.Print("\nFind duplicate hash approach\n")
 	printDuplicateHash(arr3)
+
+	fmt.Println("Print duplicate count method")
+	printDuplicateCount(arr3, 11)
 }
 
 func linearSearch(list []int, v int) int {
@@ -102,6 +105,22 @@ func printDuplicateHash(arr []int) {
 
 		} else {
 			m[x] = x
+		}
+	}
+	fmt.Println()
+}
+
+func printDuplicateCount(arr []int, max int) {
+	count := make([]int, max)
+	for i := 0; i < len(arr); i++ {
+		count[i] = 0
+	}
+
+	for i, a := range arr {
+		if count[arr[i]] == 1 {
+			fmt.Print(a, ", ")
+		} else {
+			count[arr[i]]++
 		}
 	}
 	fmt.Println()
