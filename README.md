@@ -8,3 +8,8 @@ Learn data structure with go programming language
 - Struct internal data mutability
 - Implementing interface
 - Arrays and Slices
+
+## Searching and Sorting
+- Linear Search
+- Binary Search
+- Counting Search
